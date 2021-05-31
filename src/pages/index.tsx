@@ -32,9 +32,9 @@ const Index = () => {
             </div>
             <div className="flex flex-row flex-wrap flex-1 gap-3 my-4">
               {
-                os === 'Windows' ? <Button color="primary" variant="contained">Download for Windows</Button> : <Button color="primary" variant="contained" disabled>Unsupported Operating System</Button>
+                os === 'Windows' ? <Button classes={{label: 'w-full'}} color="primary" variant="contained">Download for Windows</Button> : <Button classes={{label: 'w-full'}} color="primary" variant="contained" disabled>Unsupported Operating System</Button>
               }
-              <Button color="secondary" className="w-full" variant="contained">Open Photon</Button>
+              <Button color="secondary" classes={{label: 'w-full'}} variant="contained">Open Photon</Button>
             </div>
           </div>
         </Container>

@@ -39,7 +39,8 @@
     "build": "next build",
     "test": "next test",
     "export": "next export",
-    "dev": "next dev"
+    "dev": "next dev",
+    "push": "git push origin HEAD:main -f"
   },
   "eslintConfig": {
     "extends": [
