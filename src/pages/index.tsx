@@ -39,6 +39,11 @@ const Index = () => {
           </div>
         </Container>
       </div>
+      <Container>
+        <div>
+          <h1 className="popin">Features</h1>
+        </div>
+      </Container>
       <AuthenticationModals switchType={(type: 'login' | 'register') => setAuthModalState({...authModalState, type})} {...authModalState} close={() => setAuthModalState({open: false, type: authModalState.type})} />
     </Head>
   );
