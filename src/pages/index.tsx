@@ -34,7 +34,7 @@ const Index = () => {
               {
                 os === 'Windows' ? <Button color="primary" variant="contained">Download for Windows</Button> : <Button color="primary" variant="contained" disabled>Unsupported Operating System</Button>
               }
-              <Button color="secondary" variant="contained">Open Photon</Button>
+              <Button color="secondary" className="w-full" variant="contained">Open Photon</Button>
             </div>
           </div>
         </Container>
