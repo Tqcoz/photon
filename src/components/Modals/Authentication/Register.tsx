@@ -29,9 +29,9 @@ const Register: React.FC<RegisterProps> = memo(({switchType}) => {
         email: '',
         password: ''
     })
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    const captcha = useGoogleReCaptcha();
     const getToken = () =>{
-        executeRecaptcha("submit").then((token: string) => console.log(token)
+        captcha.executeRecaptcha!("submit").then((token: string) => console.log(token)
         );
         
     }
