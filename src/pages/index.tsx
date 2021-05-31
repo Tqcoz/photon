@@ -1,7 +1,7 @@
 import React, { ReducerAction, useEffect, useReducer, useState } from 'react';
 import Head from '../components/Layout/Head';
 import Link from 'next/link'
-import { Button, ButtonGroup, Container } from '@material-ui/core'
+import { Button, Container } from '@material-ui/core'
 import Navbar from '../components/Layout/Navbar';
 import { WithUserAgentProps, withUserAgent, UserAgent } from 'next-useragent'
 import { useOperatingSystem } from '../modules/contexts/OperatingSystem';
@@ -47,7 +47,7 @@ const Index = () => {
         </Container>
       </div>
       <div className="bg-gray-600 bg-opacity-25 w-full">
-        <h1 className="text-7xl font-bold"><center>Community is first.</center></h1>
+        <h1 className="text-7xl font-bold text-center">Community is first.</h1>
       </div>
       <AuthenticationModals switchType={(type: 'login' | 'register') => setAuthModalState({...authModalState, type})} {...authModalState} close={() => setAuthModalState({open: false, type: authModalState.type})} />
     </Head>
