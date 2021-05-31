@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-gray-100 bg-gray-900;
+}
+*{
+  font-family: 'Open Sans', 'Roboto', sans-serif !important;
+}
+button:not(.MuiButton-outlined){
+  border-radius: 8px !important;
+  outlined: none !important;
+}
+.navDrawer{
+  background: #dc62aa !important;
+}
+*:focus {
+  outline: none !important;
+}
+.textField{
+  width: 100%;
+}
+.w-full{
+  width: 100% !important;
+  @w-full;
+}
+div[role="presentation"]{
+  transition: all 1.3s cubic-bezier(0.11, 0.35, 0.62, 1.12);
+}
+/* .modal-trans {
+
+  transition: all 3.3s ease-in-out !important;
+} */
+.modal{
+  @apply px-20 py-16;
+  transition: height 0.3s cubic-bezier(0,1,0,1);
+  width: 32rem;
+  background: rgb(18, 17, 20);
+  background: linear-gradient(90deg, rgb(23, 24, 39) 0%, rgb(24, 25, 44) 100%);
+
+  background: -moz-linear-gradient(90deg, rgb(23, 24, 39) 0%, rgb(24, 25, 44) 100%);
+
+  background: -webkit-linear-gradient(90deg, rgb(23, 24, 39) 0%, rgb(24, 25, 44) 100%); 
+}
+.hero{
+  background: hsla(303, 68%, 65%, 1);
+
+  background: linear-gradient(90deg, hsla(303, 68%, 65%, 1) 0%, hsla(360, 86%, 67%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(303, 68%, 65%, 1) 0%, hsla(360, 86%, 67%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(303, 68%, 65%, 1) 0%, hsla(360, 86%, 67%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E36BDD", endColorstr="#F36364", GradientType=1 );
+}

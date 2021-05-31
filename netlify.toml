@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[[plugins]]
+<<<<<<< HEAD
+<<<<<<< HEAD
+  package = "@netlify/plugin-nextjs"
+=======
+  package = "@netlify/plugin-nextjs"
+>>>>>>> 95704799003c02e1598f9c48792ded13c1a9e62e
+=======
+  package = "@netlify/plugin-nextjs"
+>>>>>>> 95704799003c02e1598f9c48792ded13c1a9e62e
