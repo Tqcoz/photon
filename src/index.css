@@ -70,3 +70,6 @@ body::-webkit-scrollbar-thumb {
 ._nav{
   @apply bg-opacity-25;
 }
+.grecaptcha-badge{
+  display: none !important;
+}
