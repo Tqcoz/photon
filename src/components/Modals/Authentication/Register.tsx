@@ -1,6 +1,4 @@
 import { Button, FormControl, FormGroup, InputAdornment, makeStyles, TextField, Theme } from '@material-ui/core';
-import Link from 'next/link';
-import ReCAPTCHA from "react-google-recaptcha";
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { GoogleReCaptcha, GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { auth } from '../../../api';
