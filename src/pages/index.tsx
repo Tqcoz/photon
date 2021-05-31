@@ -65,28 +65,28 @@ const Index = () => {
               img: (
                 <>
                   {
-                    responsive === "3-cols" && <Secured width={"642"} />
+                    responsive === "3-cols" && <Secured width={"522"} />
                   }
                   {
-                    responsive === "2-cols" && <Secured width={"542"} />
+                    responsive === "2-cols" && <Secured width={"442"} />
                   }
                   {
                     responsive === "1-cols" && <Secured width={"400"} />
                   }
                   {
-                    responsive === "fullscreen" && <Secured width={"410"} />
+                    responsive === "fullscreen" && <Secured width={"320"} />
                   }
                 </>
               )
             }
           ].map((item, key) => (
-            <div key={key} className="py-4 ring-inset flex-wrap rounded-md p-3 flex flex-row items-center gap-8 justify-center" data-aos="fade-up">
-              <span className="text-5xl text-center">
+            <div key={key} className="py-4 self-center ring-inset flex-wrap rounded-md p-3 flex flex-row items-center gap-8 justify-center" data-aos="fade-up">
+              <span className="text-5xl md:text-left text-center">
                 {item.img}  
               </span>
-              <div>
-                <h1 className="md:text-7xl text-5xl font-bold text-white sm:block hidden">{item.heading}</h1>
-                <p className="md:text-3xl text-2xl text-gray-300">
+              <div className="space-y-4">
+                <h1 className="lg:text-6xl md:text-5xl text-5xl font-bold text-white md:text-left text-center">{item.heading}</h1>
+                <p className="text-xl text-gray-300 md:text-left text-center text-wrap w-96">
                   {item.message}
                 </p>
               </div>
