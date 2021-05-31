@@ -1,4 +1,4 @@
-import React, { ReducerAction, useReducer, useState } from 'react';
+import React, { ReducerAction, useEffect, useReducer, useState } from 'react';
 import Head from '../components/Layout/Head';
 import Link from 'next/link'
 import { Button, ButtonGroup, Container } from '@material-ui/core'
@@ -7,20 +7,27 @@ import { WithUserAgentProps, withUserAgent, UserAgent } from 'next-useragent'
 import { useOperatingSystem } from '../modules/contexts/OperatingSystem';
 import { useAuthenticated } from '../modules/contexts/Authentication';
 import AuthenticationModals from '../components/UI/AuthenticationModals';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 const Index = () => {
   const [authModalState, setAuthModalState] = useState({
     open: false,
     type: 'login',
   } as {open: boolean, type: 'login' | 'register', switch?: (type: 'login' | 'register') => any}) 
   const os = useOperatingSystem()
-  
+  useEffect(() => {
+    AOS.init({
+      duration: 1300
+    });
+    
+  }, []);
   return (
     <Head title="Home">
       <div className="hero" >
-        <Container classes={{ root: 'bg-transparent', }} className="flex flex-col gap-3 p-4 pb-12 space-y-3" style={{minHeight: '18rem'}}>
+        <Container classes={{ root: 'bg-transparent', }} className="flex py-8 flex-col gap-3 p-4 h-screen space-y-3" style={{minHeight: '18rem'}}>
           <Navbar authModalState={setAuthModalState} />
           <div className="my-4 w-full h-6" data-spacing />
-          <div className="flex flex-col items-center justify-start md:justify-center flex-1 flex-grow h-full p-4 bg-black rounded-md shadow-lg ring-opacity-20 ring-inset ring-pink-50 ring-2 bg-opacity-5 blur-lg hero-inset py-6" style={{flexGrow: 1}}>
+          <div className="flex flex-col items-center justify-start md:justify-center flex-1 flex-grow h-2/3 p-4 bg-black rounded-md shadow-lg ring-opacity-20 ring-inset ring-pink-50 ring-2 bg-opacity-5 blur-lg hero-inset py-6" style={{flexGrow: 1}}>
             <div className="px-3 py-5 text-center w-8/12">
               <h1 className="flex-1 my-4 text-4xl font-bold text-center text-white md:text-6xl">
                 A light of hope for better messaging.
@@ -30,7 +37,7 @@ const Index = () => {
               </p>
               <span className="my-3 font-bold" >Did we mention it's free?</span>
             </div>
-            <div className="flex flex-row flex-wrap flex-1 gap-3 my-4">
+            <div className="flex flex-row flex-wrap gap-3 my-4 p-2">
               {
                 os === 'Windows' ? <Button className="w-full" color="primary" variant="contained">Download for Windows</Button> : <Button className="w-full" color="primary" variant="contained" disabled>Unsupported Operating System</Button>
               }
@@ -39,11 +46,9 @@ const Index = () => {
           </div>
         </Container>
       </div>
-      <Container>
-        <div>
-          <h1 className="popin">Features</h1>
-        </div>
-      </Container>
+      <div className="bg-gray-600 bg-opacity-25 w-full">
+        <h1 className="text-7xl font-bold"><center>Community is first.</center></h1>
+      </div>
       <AuthenticationModals switchType={(type: 'login' | 'register') => setAuthModalState({...authModalState, type})} {...authModalState} close={() => setAuthModalState({open: false, type: authModalState.type})} />
     </Head>
   );

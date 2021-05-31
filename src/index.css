@@ -27,7 +27,7 @@ button:not(.MuiButton-outlined){
   @w-full;
 }
 div[role="presentation"]{
-  transition: all 1.3s cubic-bezier(0.11, 0.35, 0.62, 1.12);
+  transition: all .3s cubic-bezier(0.11, 0.35, 0.62, 1.12);
 }
 /* .modal-trans {
 
@@ -35,7 +35,7 @@ div[role="presentation"]{
 } */
 .modal{
   @apply px-20 py-16;
-  transition: height 0.3s cubic-bezier(0,1,0,1);
+  transition: height 0.2s cubic-bezier(0,1,0,1);
   width: 32rem;
   background: rgb(18, 17, 20);
   background: linear-gradient(90deg, rgb(23, 24, 39) 0%, rgb(24, 25, 44) 100%);
@@ -55,20 +55,19 @@ div[role="presentation"]{
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E36BDD", endColorstr="#F36364", GradientType=1 );
 }
-@-webkit-keyframes pop-in {
-  0% { opacity: 0; -webkit-transform: scale(0.5); }
-  100% { opacity: 1; -webkit-transform: scale(1); }
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
 }
-@-moz-keyframes pop-in {
-  0% { opacity: 0; -moz-transform: scale(0.5); }
-  100% { opacity: 1; -moz-transform: scale(1); }
+body::-webkit-scrollbar-track {
+  background-color: rgb(47, 34, 45);
+  width: 15px;
 }
-@keyframes pop-in {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, rgb(155, 120, 226) 0%, rgb(244, 39, 255));
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
 }
-.popin{
-  -webkit-animation:pop-in 0.5s;
-  -moz-animation:pop-in 0.5s;
-  -ms-animation:pop-in 0.5s;
+._nav{
+  @apply bg-opacity-25;
 }

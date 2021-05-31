@@ -29,9 +29,9 @@ const Login = ({switchType}:LoginProps) => {
     }, [])
     return (
         <div className="modal-trans">
-            <div className="bg-red-700 rounded-md modal text-center model-trans">
+            <div className="bg-red-700 rounded-md modal text-center model-trans items-center flex flex-col">
                 <h1 className="text-3xl font-bold">Welcome back!</h1>
-                <form className={classes.root + ' flex flex-col gap-2 w-full model-trans'} autoComplete="on" >
+                <form className={classes.root + ' flex flex-col gap-2 w-5/6 md:w-full model-trans'} autoComplete="on" >
                     <FormGroup className={'w-full py-4 gap-4 model-trans'}>
                         <FormControl classes={{root: 'w-full gap-4'}}>
                             <TextField color="secondary" className="textField" label="Email" variant="standard" />
