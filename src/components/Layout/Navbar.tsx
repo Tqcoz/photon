@@ -18,9 +18,17 @@ const Navbar = ({authModalState}: {authModalState: SetStateAction<any>}) => {
       {
         query === "fullscreen" ? (
           <>
-            <Button variant="outlined" color="secondary">
-              Open Photon
-            </Button>
+            {
+              authenticated ? (
+                <Button variant="outlined" color="secondary">
+                  Open Photon
+                </Button>
+              ) : (
+                <Button onClick={() => authModalState({open: true, type: 'login'})} variant="outlined" color="secondary">
+                  Login
+                </Button>
+              )
+            }
             <IconButton onClick={open} classes={{root: "flex md:hidden"}}>
               <MenuButton />
             </IconButton>
