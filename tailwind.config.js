@@ -4,6 +4,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        '102': '32rem'
+      },
       colors: {
         brand: '#f2636d',
         steel: {

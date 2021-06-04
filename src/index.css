@@ -73,3 +73,6 @@ body::-webkit-scrollbar-thumb {
 .grecaptcha-badge{
   display: none !important;
 }
+._featuresItem{
+  width: 80rem !important;
+}

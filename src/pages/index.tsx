@@ -13,7 +13,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image'
 import { Secured } from '../components/Vectors/Secured';
+import isOdd from 'is-odd'
 import { useResponsive } from '../modules/hooks/useResponsive';
+import { Universal } from '../components/Vectors/Universal';
 const Index = () => {
   const [authModalState, setAuthModalState] = useState({
     open: false,
@@ -35,11 +37,11 @@ const Index = () => {
           <div className="my-4 w-full h-6" data-spacing />
           <div className="flex flex-col my-4 items-center justify-start md:justify-center flex-1 flex-grow p-4 bg-black rounded-md shadow-lg ring-opacity-20 ring-inset ring-pink-50 ring-2 bg-opacity-5 blur-lg hero-inset py-8" style={{flexGrow: 1}}>
             <div className="px-3 py-5 text-center w-8/12">
-              <h1 className="flex-1 my-4 text-4xl font-bold text-center text-white md:text-6xl">
+              <h3 className="flex-1 my-4 text-4xl font-bold text-center text-white md:text-6xl">
                 A light of hope for better messaging.
-              </h1>
+              </h3>
               <p className="mb-3 text-base">
-                Photon is a revolutionary chat client designed to fit users needs best while still remaining <u>easy to use</u> and <u>customizable</u>, it uses <u>top-tier security</u> protocols to keep you messaging anonymously.   
+                Photon is a revolutionary chat client designed to fit users needs best while still remaining <u>easy to use</u> and <u>customizable</u>, it uses <u>top-tier security</u> protocols to keep you messaging anonymously. This project is created by BF from 7-5! 
               </p>
               <span className="my-3 font-bold" >Did we mention it's free?</span>
             </div>
@@ -52,16 +54,16 @@ const Index = () => {
             
           </div>
         </Container>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#202736" fill-opacity="1" d="M0,64L40,53.3C80,43,160,21,240,16C320,11,400,21,480,64C560,107,640,181,720,213.3C800,245,880,235,960,213.3C1040,192,1120,160,1200,154.7C1280,149,1360,171,1400,181.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        <svg fill="#111827" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill-opacity="1" d="M0,64L40,53.3C80,43,160,21,240,16C320,11,400,21,480,64C560,107,640,181,720,213.3C800,245,880,235,960,213.3C1040,192,1120,160,1200,154.7C1280,149,1360,171,1400,181.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
         </svg>
       </div>
-      <div className="flex flex-col flex-wrap items-center absolute bg-gray-600 bg-opacity-25 top w-full gap-5 justify-center">
+      <div className="flex flex-col items-center justify-center w-full gap-8 mt-10 flex-wrap">
         {
           [
             {
               heading: 'Security is Priority',
-              message: 'We ensure your data remains secure by taking extra security procedures.',
+              message: 'We hash all of your data multiple times using distinct keys linked to your account, and your account only.',
               img: (
                 <>
                   {
@@ -78,21 +80,60 @@ const Index = () => {
                   }
                 </>
               )
+            },
+            {
+              heading: 'Inclusive to Everyone',
+              message: 'We are an open community that is inclusive of everyone, unbias of race, gender, sexuality or device!',
+              img: (
+                <>
+                  {
+                    responsive === "3-cols" && <Universal width={"542"} />
+                  }
+                  {
+                    responsive === "2-cols" && <Universal width={"442"} />
+                  }
+                  {
+                    responsive === "1-cols" && <Universal width={"400"} />
+                  }
+                  {
+                    responsive === "fullscreen" && <Universal width={"320"} />
+                  }
+                </>
+              )
             }
           ].map((item, key) => (
-            <div key={key} className="py-4 self-center ring-inset flex-wrap rounded-md p-3 flex flex-row items-center gap-8 justify-center" data-aos="fade-up">
-              <span className="text-5xl md:text-left text-center">
-                {item.img}  
-              </span>
-              <div className="space-y-4">
-                <h1 className="lg:text-6xl md:text-5xl text-5xl font-bold text-white md:text-left text-center">{item.heading}</h1>
-                <p className="text-xl text-gray-300 md:text-left text-center text-wrap w-96">
-                  {item.message}
-                </p>
+            <div data-aos="fade-up" key={key} className={`flex-wrap md:w-3/5 gap-3 ${isOdd(key) ? 'bg-gray-700' : 'bg-gray-800'} p-3 rounded-md`}>
+              <div className="flex flex-row items-center justify-center p-3 flex-wrap large:flex-nowrap">
+                {
+                  !isOdd(key) ? (
+                    <>
+                      <span className="text-5xl md:text-left text-center flex-1">
+                        {item.img}  
+                      </span>
+                      <div className="space-y-2">
+                        <h1 className="lg:text-6xl md:text-5xl text-5xl font-bold text-white md:text-left text-center">{item.heading}</h1>
+                        <p className="text-xl text-gray-300 md:text-left text-center text-wrap md:w-102 w-auto">
+                          {item.message}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="space-y-2 flex-1 md-2 md:mb-inherit">
+                        <h1 className="lg:text-6xl md:text-5xl text-5xl font-bold text-white md:text-left text-center">{item.heading}</h1>
+                        <p className="text-xl text-gray-300 md:text-left text-center text-wrap md:w-102 w-auto">
+                          {item.message}
+                        </p>
+                      </div>
+                      <span className="text-5xl md:text-left text-center">
+                        {item.img}  
+                      </span>
+                    </>
+                  )
+                }
               </div>
             </div>
-          ))
-        }
+        ))}
       </div>
       <AuthenticationModals switchType={(type: 'login' | 'register') => setAuthModalState({...authModalState, type})} {...authModalState} close={() => setAuthModalState({open: false, type: authModalState.type})} />
     </Head>

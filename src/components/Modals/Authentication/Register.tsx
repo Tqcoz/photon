@@ -44,7 +44,7 @@ const Register: React.FC<RegisterProps> = memo(({switchType}) => {
             captcha: _token
         })
             .then(handleAuthRegisterResponse)
-            .catch(() => setError(['An error occured, please make sure all of the input fields are filled out correctly!', 'aids']))
+            .catch(() => setError(['An error occured, please make sure all of the input fields are filled out correctly!']))
     }
     return (
         <div className="modal-trans">

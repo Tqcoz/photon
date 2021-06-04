@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Photon is a revolutionary chat client designed to fit users needs best while still remaining easy to use and customizable, it uses top-tier security protocols to keep you messaging anonymously.
+> Photon is a revolutionary chat client designed to fit users needs best while still remaining easy to use and customizable, it uses top-tier security protocols to keep you messaging anonymously. This project was created by BF from 7-5!
 
 ### 🏠 [Homepage](https://www.getphoton.app/)
 
@@ -14,7 +14,7 @@
 
 ## Author
 
-👤 **Wuxxy**
+👤 **Bobby**
 
 * Website: https://tqcoz.github.io
 * Github: [@Tqcoz](https://github.com/Tqcoz)
