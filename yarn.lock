@@ -2659,6 +2659,11 @@
   resolved "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-5.1.1.tgz"
   integrity sha512-giAlZwstKbmvMk1OO7WXSj4OZ0keXAcl2TQq4LWHiiPH2ByaH7WeUzng+Qej8UPxxv+8lRTuouo0iaNDBuzIBA==
 
+"@types/is-odd@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/is-odd/-/is-odd-3.0.0.tgz#861b26fa31e656354bb05d63254091f734c461b5"
+  integrity sha512-XfoBBgqc9DYRWo0V6clOC9cDy9KYELqgWwyulwCkv8/6Hlnd25XbDXGGnWYqOr3GUYIwqp4/gqm7/RtCZvqOJA==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz"
@@ -2706,10 +2711,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-14.14.31.tgz"
   integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
-"@types/node@^12.0.0":
-  version "12.20.13"
-  resolved "https://registry.npmjs.org/@types/node/-/node-12.20.13.tgz"
-  integrity sha512-1x8W5OpxPq+T85OUsHRP6BqXeosKmeXRtjoF39STcdf/UWLqUsoehstZKOi0CunhVqHG17AyZgpj20eRVooK6A==
+"@types/node@^15.12.1":
+  version "15.12.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.1.tgz#9b60797dee1895383a725f828a869c86c6caa5c2"
+  integrity sha512-zyxJM8I1c9q5sRMtVF+zdd13Jt6RU4r4qfhTd7lQubyThvLfx6yYekWSQjGCGV2Tkecgxnlpl/DNlb6Hg+dmEw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
