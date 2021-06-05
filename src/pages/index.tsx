@@ -41,7 +41,7 @@ const Index = () => {
                 A light of hope for better messaging.
               </h3>
               <p className="mb-3 text-base">
-                Photon is a revolutionary chat client designed to fit users needs best while still remaining <u>easy to use</u> and <u>customizable</u>, it uses <u>top-tier security</u> protocols to keep you messaging anonymously. This project is created by BF from 7-5! 
+                Photon is a revolutionary chat client designed to fit users needs best while still remaining <u>easy to use</u> and <u>customizable</u>, it uses <u>top-tier security</u> protocols to keep you messaging anonymously. 
               </p>
               <span className="my-3 font-bold" >Did we mention it's free?</span>
             </div>
