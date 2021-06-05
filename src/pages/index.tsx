@@ -81,26 +81,26 @@ const Index = () => {
                 </>
               )
             },
-            {
-              heading: 'Inclusive to Everyone',
-              message: 'We are an open community that is inclusive of everyone, unbias of race, gender, sexuality or device!',
-              img: (
-                <>
-                  {
-                    responsive === "3-cols" && <Universal width={"542"} />
-                  }
-                  {
-                    responsive === "2-cols" && <Universal width={"442"} />
-                  }
-                  {
-                    responsive === "1-cols" && <Universal width={"400"} />
-                  }
-                  {
-                    responsive === "fullscreen" && <Universal width={"320"} />
-                  }
-                </>
-              )
-            }
+            // {
+            //   heading: 'Inclusive to Everyone',
+            //   message: 'We are an open community that is inclusive of everyone, unbias of race, gender, sexuality or device!',
+            //   img: (
+            //     <>
+            //       {
+            //         responsive === "3-cols" && <Universal width={"542"} />
+            //       }
+            //       {
+            //         responsive === "2-cols" && <Universal width={"442"} />
+            //       }
+            //       {
+            //         responsive === "1-cols" && <Universal width={"400"} />
+            //       }
+            //       {
+            //         responsive === "fullscreen" && <Universal width={"320"} />
+            //       }
+            //     </>
+            //   )
+            // }
           ].map((item, key) => (
             <div data-aos="fade-up" key={key} className={`flex-wrap md:w-3/5 gap-3 ${isOdd(key) ? 'bg-gray-700' : 'bg-gray-800'} p-3 rounded-md`}>
               <div className="flex flex-row items-center justify-center p-3 flex-wrap large:flex-nowrap">
