@@ -4,7 +4,7 @@ import Title from './Title';
 import NextHead from 'next/head'
 const Head = ({title, children}:{title: string, children: ReactFragment}) => {
   return (
-    <div>
+    <div className="flex flex-col w-full">
       <NextHead>
         <title>Photon - {title}</title>
         <Basic />

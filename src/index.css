@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -7,7 +8,7 @@ body {
   @apply text-gray-100 bg-gray-900;
 }
 *{
-  font-family: 'Open Sans', 'Roboto', sans-serif !important;
+  font-family: 'Rubik', 'Roboto', sans-serif !important;
 }
 button:not(.MuiButton-outlined){
   border-radius: 8px !important;
@@ -75,4 +76,7 @@ body::-webkit-scrollbar-thumb {
 }
 ._featuresItem{
   width: 80rem !important;
+}
+.footer{
+  background: #161c2a;
 }
