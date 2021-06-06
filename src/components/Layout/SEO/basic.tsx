@@ -6,12 +6,14 @@ const Basic = () => {
     <>
       <meta name="theme-color" content={'#f2636d'} />
       <meta name="description" content={'Photon is a revolutionary chat client designed to fit users needs best while still remaining easy to use and customizable, it uses top-tier security protocols to keep you messaging anonymously.'} />
+      <meta name="keywords" content="messaging,communications,anonymous messaging,fast messaging,photon,getphoton,messaging app,free messaging app,free messaging" />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={'Photon is a revolutionary chat client designed to fit users needs best while still remaining easy to use and customizable, it uses top-tier security protocols to keep you messaging anonymously.'} />
       <meta property="twitter:description" content={'Photon is a revolutionary chat client designed to fit users needs best while still remaining easy to use and customizable, it uses top-tier security protocols to keep you messaging anonymously.'} />
       <meta property="og:site_name" content={'Photon'} />
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:title" content={'Photon'} />
+
     </>
   );
 };
