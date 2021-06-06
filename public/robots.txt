@@ -1,0 +1,32 @@
+User-agent: *
+Crawl-delay: 120
+Allow: /invite
+Allow: /invite/
+Allow: /api/v*/store
+Allow: /api/v*/applications
+Allow: /api/v*/invite
+Disallow: /dash
+Disallow: /me/
+Disallow: /auth
+Disallow: /auth/
+Disallow: /api
+Disallow: /api/
+Disallow: /user/
+
+User-agent: Twitterbot
+Crawl-delay: 120
+Disallow: /api/v*/store
+Disallow: /api/v*/applications
+Disallow: /api/v*/invite
+Allow: /invite
+Allow: /invite/
+Disallow: /dash
+Disallow: /me/
+Disallow: /auth
+Disallow: /auth/
+Disallow: /api
+Disallow: /api/
+Disallow: /user/
+
+User-agent: nsa
+Disallow: /
