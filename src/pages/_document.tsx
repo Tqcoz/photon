@@ -2,10 +2,11 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { theme } from '../components/UI/theme';
 import React from 'react';
+import { ColorModeScript } from '@chakra-ui/color-mode';
 export default class Photon extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="dark">
         <Head>
           {/* PWA primary color */}
           <link
@@ -14,7 +15,8 @@ export default class Photon extends Document {
           />
           <link rel="shortcut icon" href="screenLogo.png" />
         </Head>
-        <body>
+        <body className="chakra-ui-dark">
+          <ColorModeScript initialColorMode="dark" />
           <Main />
           <NextScript />
         </body>

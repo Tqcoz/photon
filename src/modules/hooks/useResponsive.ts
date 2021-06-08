@@ -1,9 +1,10 @@
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "@chakra-ui/media-query";
+
 
 export const useResponsive = ():"3-cols" | "2-cols" | "1-cols" | "fullscreen" => {
-  const is3Cols = useMediaQuery({ minWidth: 1336 });
-  const is2Cols = useMediaQuery({ minWidth: 1265 });
-  const is1Cols = useMediaQuery({ minWidth: 800 });
+  const [is3Cols] = useMediaQuery("(min-width: 1340px)");
+  const [is2Cols] = useMediaQuery("(min-width: 1260px)");
+  const [is1Cols] = useMediaQuery("(min-width: 800px)");
 
   if (is3Cols) {
     return "3-cols";

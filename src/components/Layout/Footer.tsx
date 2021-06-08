@@ -5,7 +5,7 @@ const Footer = () => {
         <h2 className="font-bold text-2xl">
             Photon
         </h2>
-      <div className="links flex flex-row gap-24 mx-auto" style={{width: '48em'}}>
+      <div className="links flex flex-row gap-24 mx-auto flex-wrap md:flex-nowrap">
         <div className="flex flex-col flex-1">
             <h3 className="font-bold mb-2 select-none">Policies</h3>
             <div className="text-gray-200 flex flex-col gap-2 w-full">
