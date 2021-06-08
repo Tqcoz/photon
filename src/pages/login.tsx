@@ -14,7 +14,7 @@ const Login = () => {
     return (
         <Head title="Login">
             <div className="flex flex-col items-center justify-center min-h-screen hero">
-                <Backdrop className={classes.backdrop + ' text-gray-300'} open={true}>
+                <Backdrop className={classes.backdrop + ' text-gray-300 flex flex-col'} open={true}>
                     <div className="flex flex-col rounded-md shadow-lg w-96 border-box">
                         <div className="hero modal-top">
                             <div className="rounded-md m-2 p-2 flex flex-row items-center h-8 bg-gray-600 bg-opacity-5">
@@ -25,6 +25,9 @@ const Login = () => {
                         <div className="flex flex-col md:w-96 sm:w-full px-8 py-8 bg-gray-800 border-box">
                             <LoginForm login={loginFunc} />
                         </div>
+                    </div>
+                    <div className="w-96">
+                        <a href="/" className="text-left hover:text-gray-200 text-gray-300 w-full self-start text-sm">Go back to the home page</a>
                     </div>
                 </Backdrop>
 

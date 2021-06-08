@@ -6,7 +6,7 @@ import { useResponsive } from '../../modules/hooks/useResponsive';
 import { useNavDrawer } from '../../modules/contexts/Drawer';
 import NavigationDrawer from './NavigationDrawer';
 import { useAuthenticated } from '../../modules/contexts/Authentication';
-const Navbar = ({authModalState}: {authModalState: SetStateAction<any>}) => {
+const Navbar = () => {
   let query = useResponsive()
   let { open } = useNavDrawer()
   const {authenticated} = useAuthenticated()
@@ -26,7 +26,7 @@ const Navbar = ({authModalState}: {authModalState: SetStateAction<any>}) => {
                       Open Photon
                     </Button>
                   ) : (
-                    <Button onClick={() => authModalState({open: true, type: 'login'})} variant="outlined" color="secondary">
+                    <Button href="/login" variant="outlined" color="secondary">
                       Login
                     </Button>
                   )
@@ -62,7 +62,7 @@ const Navbar = ({authModalState}: {authModalState: SetStateAction<any>}) => {
                       Open Photon
                     </Button>
                   ) : (
-                    <Button onClick={() => authModalState({open: true, type: 'login'})} variant="outlined" color="secondary">
+                    <Button href="/login" variant="outlined" color="secondary">
                       Login
                     </Button>
                   )

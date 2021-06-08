@@ -18,10 +18,6 @@ import { useResponsive } from '../modules/hooks/useResponsive';
 import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
 const Index = () => {
-  const [authModalState, setAuthModalState] = useState({
-    open: false,
-    type: 'login',
-  } as {open: boolean, type: 'login' | 'register', switch?: (type: 'login' | 'register') => any}) 
   const os = useOperatingSystem()
   const responsive = useResponsive()
   useEffect(() => {
@@ -35,7 +31,7 @@ const Index = () => {
       <div className="flex-1">
         <div className="hero min-h-screen m-auto flex-1 flex flex-col page pb-18 w-full">
           <Container classes={{ root: 'bg-transparent', }} className="flex flex-1 py-8 flex-col gap-3 p-4 space-y-3" style={{minHeight: '18rem'}}>          
-            <Navbar authModalState={setAuthModalState} />
+            <Navbar />
             <div className="my-4 w-full h-6" data-spacing />
             <div className="flex flex-col my-4 items-center justify-start md:justify-center flex-1 flex-grow p-4 bg-black rounded-md shadow-lg ring-opacity-20 ring-inset ring-pink-50 ring-2 bg-opacity-5 blur-lg hero-inset py-8" style={{flexGrow: 1}}>
               <div className="px-3 py-5 text-center w-8/12">
@@ -142,7 +138,6 @@ const Index = () => {
       </div>
 
       <Footer />
-      <AuthenticationModals switchType={(type: 'login' | 'register') => setAuthModalState({...authModalState, type})} {...authModalState} close={() => setAuthModalState({open: false, type: authModalState.type})} />
     </Head>
   );
 };
