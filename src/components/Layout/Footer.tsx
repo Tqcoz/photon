@@ -25,7 +25,8 @@ const Footer = () => {
             <h3 className="font-bold mb-2 select-none">Features</h3>
             <div className="text-gray-200 flex flex-col gap-2 w-full">
                 <a className="hover:text-gray-300" href="/features#encrypted">Encrypted</a>
-                <a className="hover:text-gray-300" href="/features#simple">Simple</a>
+                <a className="hover:text-gray-300" href="/features#layout">Layout</a>
+                <a className="hover:text-gray-300" href="/features#layout">Layout</a>
                 <a className="hover:text-gray-300" href="/features#messaging">Messaging</a>
             </div>
         </div>

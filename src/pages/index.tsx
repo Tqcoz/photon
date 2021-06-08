@@ -61,7 +61,7 @@ const Index = () => {
           </svg>
         </div>
         <p className="text-center text-large">Photon is still under major development, landing page is still awaiting many updates.</p>
-        <p className="text-center">While we finish up Photon to be ready for beta-access, you may join our temporary <a className="underline" href="https://discord.getphoton.app">Discord server</a> to know what is happening.</p>
+        <p className="text-center">While we finish up Photon to be ready for beta-access, you may join our temporary <a className="underline" href="https://discord.gg/bwuX2TKKd7">Discord server</a> to know what is happening.</p>
         {/* <div className="flex flex-col items-center justify-center w-full gap-8 mt-10 flex-wrap flex-1">
           {
             [

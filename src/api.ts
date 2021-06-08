@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export const auth = axios.create({
-    baseURL: 'http://35.239.214.225:4000/auth',
+    baseURL: 'https://api.getphoton.app/auth',
     timeout: 4000,
 });
 export const api = (token: string) => axios.create({
-    baseURL: 'http://35.239.214.225:4000/api',
+    baseURL: 'https://api.getphoton.app/api',
     timeout: 4000,
     headers: {token: token}
 });

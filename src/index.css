@@ -80,3 +80,19 @@ body::-webkit-scrollbar-thumb {
 .footer{
   background: #161c2a;
 }
+.modal-right{
+  border-top-right-radius: .8rem;
+  border-bottom-right-radius: .8rem;
+}
+.modal-left{
+  border-top-left-radius: .8rem;
+  border-bottom-left-radius: .8rem;
+}
+.modal-top{
+  border-top-right-radius: .8rem;
+  border-top-left-radius: .8rem;
+}
+.modal-bottom{
+  border-bottom-left-radius: .8rem;
+  border-bottom-right-radius: .8rem;
+}

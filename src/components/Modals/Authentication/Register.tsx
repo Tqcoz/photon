@@ -21,41 +21,41 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 const Register: React.FC<RegisterProps> = memo(({switchType}) => {
-    const classes = useStyles();
-    const [error, setError] = useState([] as string[])
-    const [_token, setToken] = useState('')
-    const [formDetails, updateForm] = useState({
-        username: '',
-        email: '',
-        password: ''
-    })
-    const captcha = useGoogleReCaptcha();
-    const getToken = () =>{
-        captcha.executeRecaptcha!("submit").then((token: string) => console.log(token)
-        );
+    // const classes = useStyles();
+    // const [error, setError] = useState([] as string[])
+    // const [_token, setToken] = useState('')
+    // const [formDetails, updateForm] = useState({
+    //     username: '',
+    //     email: '',
+    //     password: ''
+    // })
+    // const captcha = useGoogleReCaptcha();
+    // const getToken = () =>{
+    //     captcha.executeRecaptcha!("submit").then((token: string) => console.log(token)
+    //     );
         
-    }
-    const submitRegisterForm = () => {
-        getToken();
-        auth.post('/register', {
-            username: formDetails.username,
-            email: formDetails.email,
-            password: formDetails.password,
-            captcha: _token
-        })
-            .then(handleAuthRegisterResponse)
-            .catch(() => setError(['An error occured, please make sure all of the input fields are filled out correctly!']))
-    }
+    // }
+    // const submitRegisterForm = () => {
+    //     getToken();
+    //     auth.post('/register', {
+    //         username: formDetails.username,
+    //         email: formDetails.email,
+    //         password: formDetails.password,
+    //         captcha: _token
+    //     })
+    //         .then(handleAuthRegisterResponse)
+    //         .catch(() => setError(['An error occured, please make sure all of the input fields are filled out correctly!']))
+    // }
     return (
         <div className="modal-trans">
-            <GoogleReCaptcha
+            {/* <GoogleReCaptcha
                 onVerify={(token: string) => {
                 setToken(token);
             }}
-            />
+            /> */}
             <div className="bg-red-700 rounded-md modal text-center model-trans">
                 <h1 className="text-3xl font-bold">Welcome to Photon!</h1>
-                <form className={classes.root + ' flex flex-col gap-2 w-full'} autoComplete="on" >
+                {/* <form className={classes.root + ' flex flex-col gap-2 w-full'} autoComplete="on" >
                     <FormGroup className={'w-full py-4 gap-4'}>
                         <div className="text-red-400 w-full flex flex-col gap-2">{error.map((err) => <span>{err}</span>)}</div>
                         <FormControl classes={{root: 'w-full gap-4'}}>
@@ -63,10 +63,11 @@ const Register: React.FC<RegisterProps> = memo(({switchType}) => {
                             <TextField value={formDetails.email} onChange={({target: {value}}) => updateForm(f => ({...f, email: value}))} id="email" color="secondary" type="email" className="textField" label="Email" variant="standard" />
                             <TextField value={formDetails.password} onChange={({target: {value}}) => updateForm(f => ({...f, password: value}))} id="password" color="secondary" type="password" className="textField" label="Password" variant="standard" />
                         </FormControl>
-                        <Button onClick={submitRegisterForm} color="primary" variant="outlined">Register</Button>
-                        <a onClick={() => switchType('login')} className="cursor-pointer hover:underline">Already have an account?</a>
-                    </FormGroup>
-                </form>
+                        </FormGroup>
+                    </form> */}
+                <p>Currently, we are not supporting registering for new users. We will be doing beta testing in the near future, where we will sign you up to the site.</p>
+                <a onClick={() => switchType('login')} className="cursor-pointer hover:underline">Login</a>
+            
             </div>
         </div>
     );
