@@ -30,7 +30,6 @@ export const LoginForm = ({login}:{login: ({}:{email: string, password: string})
                     <input onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} id="password" onChange={({target: {value}}) => setPassword(value)} color="secondary" type="password" className="bg-gray-700 rounded-md ring-2 focus:ring-gray-500 focus:h-10 ring-gray-600 h-8 p-2 text-lg text-gray-300 model-trans" />
                 </div>
                 <Button onClick={() => login({email, password})} className="w-full" color="primary" variant="outlined">Login</Button>
-                <a className="cursor-pointer hover:underline w-full" href="/register">Don't have an account?</a>
                 <Link href="/forgot">
                     <span className="text-left text-xs text-pink-400 cursor-pointer w-full"><a>Forgot your password?</a></span>
                 </Link>
