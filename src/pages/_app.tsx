@@ -5,8 +5,9 @@ import '../index.css'
 import { ThemeProvider } from '@material-ui/styles';
 import { theme } from '../components/UI/theme';
 import Drawer from '../modules/contexts/Drawer';
-import OperatingSystem from '../modules/contexts/OperatingSystem';
+import OperatingSystem, { useOperatingSystem } from '../modules/contexts/OperatingSystem';
 import AuthContext from '../modules/contexts/Authentication';
+import { useResponsive } from '../modules/hooks/useResponsive';
 const App = ({Component, pageProps}:{Component:AppComponent, pageProps: AppProps}) => {
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -20,6 +21,8 @@ const App = ({Component, pageProps}:{Component:AppComponent, pageProps: AppProps
       <Drawer>
         <OperatingSystem>
           <ThemeProvider theme={theme}>
+            {useOperatingSystem()}
+            {useResponsive()}
             <Component {...pageProps} />
           </ThemeProvider>
         </OperatingSystem>

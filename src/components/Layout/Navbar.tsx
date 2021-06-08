@@ -9,6 +9,8 @@ import { useAuthenticated } from '../../modules/contexts/Authentication';
 const Navbar = () => {
   let query = useResponsive()
   let { open } = useNavDrawer()
+
+  
   const {authenticated} = useAuthenticated()
   console.log(query);
   
