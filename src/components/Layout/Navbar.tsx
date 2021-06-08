@@ -6,6 +6,7 @@ import { useResponsive } from '../../modules/hooks/useResponsive';
 import { useNavDrawer } from '../../modules/contexts/Drawer';
 import NavigationDrawer from './NavigationDrawer';
 import { useAuthenticated } from '../../modules/contexts/Authentication';
+import { useMediaQuery } from '@chakra-ui/media-query';
 const Navbar = () => {
   let query = useResponsive()
   let { open } = useNavDrawer()
@@ -20,7 +21,7 @@ const Navbar = () => {
         <h1 className="items-center p-4 text-2xl font-semibold text-center md:items-start md:text-left md:p-auto">Photon</h1>
         <div className="w-full flex flex-row justify-self-end">
           {
-            query === "fullscreen" ? (
+            useMediaQuery("(max-width:800px)")[0] ? (
               <>
                 {
                   authenticated ? (

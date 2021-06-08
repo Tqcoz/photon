@@ -20,7 +20,7 @@ const colors = {
     400: "#e867ad"
   },
 }
-const chakraTheme = extendTheme({ colors })
+const chakraTheme = extendTheme({ colors, config:{useSystemColorMode: false,initialColorMode: "dark"} })
 
 const App = ({Component, pageProps}:{Component:AppComponent, pageProps: AppProps}) => {
   useEffect(() => {
