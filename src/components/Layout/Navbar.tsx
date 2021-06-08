@@ -16,7 +16,7 @@ const Navbar = () => {
     <AppBar style={{background: '#f2636d'}} color="primary" className="_nav" classes={{colorPrimary:'flex-1 bg-brand bg-opacity-25', root: 'bg-opacity-25 bg-brand flex flex-row flex-wrap justify-start flex-1 px-4 py-2 m-auto text-gray-100 shadow-sm flex-0'}} position="static" elevation={1}>
       <Toolbar className="bg-brand">
         <h1 className="items-center p-4 text-2xl font-semibold text-center md:items-start md:text-left md:p-auto">Photon</h1>
-        <div className="w-full flex flex-row">
+        <div className="w-full flex flex-row justify-self-end">
           {
             query === "fullscreen" ? (
               <>
@@ -38,7 +38,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <div className="flex flex-row items-center self-center justify-center flex-1 gap-4 text-base font-medium text-center text-gray-200">
+                <div className="flex flex-row justify-self-end items-center self-center justify-center flex-1 gap-4 text-base font-medium text-center text-gray-200">
                   <Link href="/privacy">
                     <span className="self-center text-center hover:underline hover:cursor-pointer">
                       Privacy
