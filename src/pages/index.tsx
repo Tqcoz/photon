@@ -19,13 +19,12 @@ import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
 const Index = () => {
   
-  const os = getOS()
-  const responsive = useResponsive()
+  let os;
   useEffect(() => {
     AOS.init({
       duration: 800
     });
-    
+    os = getOS()
   }, []);
   return (
     <Head title="Home">
