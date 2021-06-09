@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Button, Container } from '@material-ui/core'
 import Navbar from '../components/Layout/Navbar';
 import { WithUserAgentProps, withUserAgent, UserAgent } from 'next-useragent'
-import { useOperatingSystem } from '../modules/contexts/OperatingSystem';
+import { getOS, useOperatingSystem } from '../modules/contexts/OperatingSystem';
 import { useAuthenticated } from '../modules/contexts/Authentication';
 import AuthenticationModals from '../components/UI/AuthenticationModals';
 import 'aos/dist/aos.css';
@@ -18,6 +18,7 @@ import { useResponsive } from '../modules/hooks/useResponsive';
 import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
 const Index = () => {
+  
   const os = useOperatingSystem()
   const responsive = useResponsive()
   useEffect(() => {

@@ -8,16 +8,11 @@ const _context = createContext({
     setOS: React.SetStateAction<any>,
 })
 
-const OperatingSystem = ({children, ua}:{children: ReactChild, ua?: UserAgent}) => {
+const OperatingSystem = ({children}:{children: ReactChild}) => {
   const [operatingSystem, setOS] = useState('')
-  useEffect(() =>{
-    setOS(ua?.os || '')
-  //   return setOS('');
-  }, [ua])
-  useEffect(() =>{
-      setOS(ua?.os || '')
-      // return setOS('');  
-  }, [ua])
+  useEffect(() => {
+    setOS(getOS() || '')
+  }, [])
   let ContextValue = {
     operatingSystem,
     setOS: (os: string) => setOS(os),
@@ -30,4 +25,26 @@ const OperatingSystem = ({children, ua}:{children: ReactChild, ua?: UserAgent}) 
   );
 };
 export const useOperatingSystem = () => useContext(_context).operatingSystem;
-export default memo(withUserAgent(OperatingSystem));
+export default memo(OperatingSystem);
+export function getOS() {
+  var userAgent = window.navigator.userAgent,
+      platform = window.navigator.platform,
+      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+      os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (!os && /Linux/.test(platform)) {
+    os = 'Linux';
+  }
+
+  return os;
+}
