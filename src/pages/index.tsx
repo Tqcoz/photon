@@ -19,7 +19,7 @@ import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
 const Index = () => {
   
-  const os = useOperatingSystem()
+  const os = getOS()
   const responsive = useResponsive()
   useEffect(() => {
     AOS.init({
