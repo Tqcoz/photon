@@ -25,6 +25,7 @@ const Index = () => {
       duration: 800
     });
     os = getOS()
+    window.getOS = getOS
   }, []);
   return (
     <Head title="Home">
