@@ -3,21 +3,13 @@ import Head from '../components/Layout/Head';
 import Link from 'next/link'
 import { Button, Container } from '@material-ui/core'
 import Navbar from '../components/Layout/Navbar';
-import { WithUserAgentProps, withUserAgent, UserAgent } from 'next-useragent'
-import { getOS, useOperatingSystem } from '../modules/contexts/OperatingSystem';
-import { useAuthenticated } from '../modules/contexts/Authentication';
-import AuthenticationModals from '../components/UI/AuthenticationModals';
+// import { getOS, useOperatingSystem } from '../modules/contexts/OperatingSystem';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLock } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image'
-import { Secured } from '../components/Vectors/Secured';
-import isOdd from 'is-odd'
-import { useResponsive } from '../modules/hooks/useResponsive';
-import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
-
+import {NextPageContext} from 'next'
+import { getOs } from '../modules/contexts/OperatingSystem';
 declare global {
   interface Window {
     getOS: () => string | null;
@@ -25,15 +17,12 @@ declare global {
 }
 
 
-const Index = () => {
+const Index = ({os}:{os: string}) => {
   
-  let os;
   useEffect(() => {
     AOS.init({
       duration: 800
     });
-    os = getOS()
-    window.getOS = getOS
   }, []);
   return (
     <Head title="Home">
@@ -54,7 +43,7 @@ const Index = () => {
               </div>
               <div className="flex flex-row flex-wrap gap-3 my-4 p-2">
                 {
-                  os === 'Windows' ? <Button className="w-full" color="primary" variant="contained">Download for Windows</Button> : <Button className="w-full" color="primary" variant="contained" disabled>Unsupported Operating System</Button>
+                  os.includes('Windows') ? <Button className="w-full" color="primary" variant="contained">Download for Windows</Button> : <Button className="w-full" color="primary" variant="contained" disabled>Unsupported Operating System</Button>
                 }
                 <Button color="secondary" className="w-full" variant="contained">Open Photon</Button>
               </div>
@@ -73,5 +62,11 @@ const Index = () => {
     </Head>
   );
 };
-
+Index.getInitialProps = async ({req}:NextPageContext) => {
+  const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+  console.log(getOs(userAgent || ''));
+  console.log(userAgent);
+  
+  return { os: getOs(userAgent || '') }
+}
 export default Index;
