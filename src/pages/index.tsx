@@ -17,6 +17,14 @@ import isOdd from 'is-odd'
 import { useResponsive } from '../modules/hooks/useResponsive';
 import { Universal } from '../components/Vectors/Universal';
 import Footer from '../components/Layout/Footer';
+
+declare global {
+  interface Window {
+    getOS: () => string | null;
+  }
+}
+
+
 const Index = () => {
   
   let os;
