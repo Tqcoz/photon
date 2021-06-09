@@ -6,7 +6,7 @@ import { useNavDrawer } from '../../modules/contexts/Drawer';
 const NavigationDrawer = () => {
   const {drawerOpened, close} = useNavDrawer()
   return (
-    <Drawer variant="persistent" classes={{paper: 'navDrawer p-4 flex flex-col gap-2 px-6 items-center', root: 'sticky'}} anchor="right" elevation={0} open={drawerOpened}>
+    <Drawer variant="persistent" classes={{paper: 'navDrawer p-4 flex flex-col gap-2 px-6 items-center z-10', root: 'sticky'}} anchor="right" elevation={0} open={drawerOpened}>
       <div className="flex flex-row items-center">
         <h1 className="flex-1 text-xl text-center">Photon</h1>
         <IconButton onClick={close}>

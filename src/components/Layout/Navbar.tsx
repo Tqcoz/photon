@@ -21,7 +21,7 @@ const Navbar = () => {
         <h1 className="items-center p-4 text-2xl font-semibold text-center md:items-start md:text-left md:p-auto">Photon</h1>
         <div className="w-full flex flex-row justify-self-end">
           {
-            useMediaQuery("(max-width:800px)")[0] ? (
+            useMediaQuery(["(max-width:700px)", "(min-width: 80px)"])[0] ? (
               <>
                 {
                   authenticated ? (

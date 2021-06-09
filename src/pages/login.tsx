@@ -16,7 +16,7 @@ const Login = () => {
         <Head title="Login">
             <div className="flex flex-col items-center justify-center min-h-screen hero">
                 <Backdrop transitionDuration={0}  className={classes.backdrop + ' text-gray-300 flex flex-col'} open={true}>
-                    <Collapse in={true} collapsedHeight={30} timeout={1300}>
+                    <Slide mountOnEnter unmountOnExit direction={'right'} in={true} timeout={{enter: 600, exit: 400}}>
                         <div>
                             <div className="flex flex-col rounded-md shadow-lg w-96 border-box">
                                 <div className="hero modal-top">
@@ -35,7 +35,7 @@ const Login = () => {
                                 <a href="/" className="text-left hover:text-gray-200 text-gray-300 w-full self-start text-sm">Go back to the home page</a>
                             </div>
                         </div>
-                    </Collapse>
+                    </Slide>
                 </Backdrop>
 
             </div>
