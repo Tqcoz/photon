@@ -2,7 +2,7 @@ import { serialize } from "cookie";
 import { NextApiRequest, NextApiResponse } from "next"
 import { auth } from "../../api"
 
-export const Login = async (req:NextApiRequest, res: NextApiResponse) => {
+export default async function Login (req:NextApiRequest, res: NextApiResponse) {
   try {
     const { email, password } = req.body;
     const codeData = await auth.post('/login', {
