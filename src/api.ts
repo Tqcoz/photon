@@ -11,6 +11,6 @@ export const api = (token?: string) => axios.create({
     headers: {Authorization: `Bearer ${token || Cookies.get('token')}`}
 });
 export const nextAPI = axios.create({
-    baseURL: 'https://getphoton.app/api',
+    baseURL: 'https://www.getphoton.app/api',
     timeout: 4000,
 });
