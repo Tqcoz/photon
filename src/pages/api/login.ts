@@ -14,7 +14,7 @@ export default async function Login (req:NextApiRequest, res: NextApiResponse) {
         error: 'An error occured when logging in. Most likely invalid details.'
       })
     }
-    let tokens = await auth.get(`/token?code=${codeData.data.code}&grant_type=login`)
+    let tokens = await auth.get(`/token?code=${codeData.data.code}&grant_type=token`)
     if (tokens.status !== 200) {
       return res.status(409).json({
         error: 'An error occured when logging in. Most likely a server error, retry login.'
