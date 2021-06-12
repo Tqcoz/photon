@@ -5,16 +5,23 @@ import { auth } from "../../api"
 export default async function Login (req:NextApiRequest, res: NextApiResponse) {
   try {
     const { email, password } = req.body;
+    console.log(req.body);
+    
     const codeData = await auth.post('/login', {
       email,
       password
     })
-    if (codeData.status !== 200) {
-      return res.status(409).json({
-        error: 'An error occured when logging in. Most likely invalid details.'
-      })
-    }
-    let tokens = await auth.get(`/token?code=${codeData.data.code}&grant_type=token`)
+    console.log(codeData);
+    
+    // if (codeData.status !== 200) {
+    //   return res.status(409).json({
+    //     error: 'An error occured when logging in. Most likely invalid details.'
+    //   })
+    // }
+    let tokens = await auth.post(`/token`, {
+      code: codeData.data.code,
+      'grant_type': 'token'
+    })
     if (tokens.status !== 200) {
       return res.status(409).json({
         error: 'An error occured when logging in. Most likely a server error, retry login.'
@@ -42,6 +49,8 @@ export default async function Login (req:NextApiRequest, res: NextApiResponse) {
       }
     })
   } catch (error) {
+    console.log(req.body);
+    
     return res.status(409).json({
       error: 'An error occured when logging in. Most likely a server error, retry login.'
     })
