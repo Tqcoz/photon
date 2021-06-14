@@ -18,8 +18,8 @@ const userContext = createContext({
 const AuthContext = ({ children, ua }: { children: ReactChild, ua?: UserAgent }) => {
   const [authenticated, setAuthState] = useState(false)
   const [user, setUser] = useState({} as User)
-  let [accessToken, setAccessToken] = useState(Cookies.get('token'));
-  let [refreshToken, setRefreshToken] = useState(Cookies.get('refresh'));
+  let [accessToken, setAccessToken]:[string | false, Dispatch<SetStateAction<string | false>>] = useState(Cookies.get('token') || false);
+  let [refreshToken, setRefreshToken]:[string | false, Dispatch<SetStateAction<string | false>>] = useState(Cookies.get('refresh') || false);
   
   useEffect(() => {
     if (accessToken && refreshToken) {
@@ -37,13 +37,16 @@ const AuthContext = ({ children, ua }: { children: ReactChild, ua?: UserAgent })
         refresh()
       }
     }
-    api().get(`/me?token=${accessToken}`)
+    api().get(`/me?token=${accessToken}`).then((userReq) => {
+      setUser(userReq.data.user)
+    })
     setAuthState(Boolean(user))
     
   }
   const logout = () => {
     setAuthState(false)
-    setToken
+    setAccessToken(false)
+    setRefreshToken(false)
   }
   let ContextValue = {
     login,
