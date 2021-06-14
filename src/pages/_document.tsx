@@ -14,6 +14,22 @@ export default class Photon extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
           <link rel="shortcut icon" href="screenLogo.png" />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-MNJ8HRXJ0K`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MNJ8HRXJ0K', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body className="chakra-ui-dark">
           <ColorModeScript initialColorMode="dark" />

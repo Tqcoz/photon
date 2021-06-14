@@ -1,19 +1,16 @@
 import {
   AppBar,
   Button,
-  IconButton,
   Toolbar
 } from '@material-ui/core';
 import React, {
 } from 'react';
-import MenuButton from '@material-ui/icons/Menu'
 import {
   useResponsive
 } from '../../modules/hooks/useResponsive';
 import {
   useNavDrawer
 } from '../../modules/contexts/Drawer';
-import NavigationDrawer from './NavigationDrawer';
 import {
   useAuthenticated
 } from '../../modules/contexts/Authentication';
@@ -26,7 +23,6 @@ const Navbar = () => {
       open
   } = useNavDrawer()
 
-  const [isSmallScreen] = useMediaQuery(["(max-width:700px)"])
   const {
       authenticated
   } = useAuthenticated()
