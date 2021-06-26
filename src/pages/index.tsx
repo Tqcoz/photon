@@ -1,27 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from '../components/Layout/Head';
 import { Container } from '@material-ui/core'
 import Navbar from '../components/Layout/Navbar';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 import Footer from '../components/Layout/Footer';
 import {NextPageContext} from 'next'
 import { getOs } from '../modules/contexts/OperatingSystem';
 import TopBanner from '../components/UI/IndexPage/TopBanner';
-declare global {
-  interface Window {
-    getOS: () => string | null;
-  }
-}
 
 
 const Index = ({os}:{os: string}) => {
-  
-  useEffect(() => {
-    AOS.init({
-      duration: 800
-    });
-  }, []);
   return (
     <Head title="Home">
       <div className="flex-1">

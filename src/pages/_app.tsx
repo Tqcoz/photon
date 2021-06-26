@@ -5,10 +5,10 @@ import '../index.css'
 import { ThemeProvider } from '@material-ui/styles';
 import { theme } from '../components/UI/theme';
 import Drawer from '../modules/contexts/Drawer';
-import OperatingSystem, { useOperatingSystem } from '../modules/contexts/OperatingSystem';
 import AuthContext from '../modules/contexts/Authentication';
-import { useResponsive } from '../modules/hooks/useResponsive';
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import clearStyles from '../modules/functions/clearStyles';
+import { AscentProvider } from '../modules/contexts/WebSocket';
 
 const colors = {
   brand: {
@@ -24,24 +24,22 @@ const chakraTheme = extendTheme({ colors, config:{useSystemColorMode: false,init
 
 const App = ({Component, pageProps}:{Component:AppComponent, pageProps: AppProps}) => {
   useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement!.removeChild(jssStyles);
-    }
+    clearStyles()
   }, []);
   return (
     <AuthContext>
-      <ChakraProvider theme={{...chakraTheme}}>
-        <Drawer>
-          <OperatingSystem>
+        <ChakraProvider theme={{...chakraTheme}}>
+          <Drawer>
             <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              <AscentProvider>
+                {/* <UserContext> */}
+                <Component {...pageProps} />
+                {/* </UserContext> */}
+              </AscentProvider>
             </ThemeProvider>
-          </OperatingSystem>
-        </Drawer>
-      </ChakraProvider>
-    </AuthContext>
+          </Drawer>
+        </ChakraProvider>
+      </AuthContext>
 
   );
 };
